@@ -49,7 +49,11 @@ import { ThrottlerModule } from '@nestjs/throttler';
           password: configService.get<string>('DB_PASSWORD'),
           database: configService.get<string>('DB_NAME'),
           entities: [User, Blog],
-          synchronize: true,
+          ssl: {
+            rejectUnauthorized: false,
+          },
+          synchronize: true, // or false in production
+          autoLoadEntities: true,
         };
 
         // console.log('🟡 Database Config:', dbConfig);
