@@ -37,7 +37,7 @@ This API provides complete blog functionality including:
     )
     .setVersion('1.0')
     .addBearerAuth()
-    .addTag('Blogs', 'Crud operation on Blogs')
+    // .addTag('Blogs', 'Crud operation on Blogs')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
